@@ -1,0 +1,95 @@
+\documentclass[xcolor=dvipsnames,letter]{beamer}
+
+
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{grffile}
+\usepackage{xspace}
+\usepackage{upgreek}
+\newcommand{\bmmax}{0} % to fix bold greek fonts
+\usepackage{bm}
+\usepackage{amsmath,amssymb,amsfonts,gensymb}
+\usepackage{comment}
+\usepackage{soul}
+\usepackage{tikz}
+%\usepackage{tikz-3dplot}
+\usepackage{mpmulti}
+\usepackage{ifthen}
+
+\usepackage{hyperref}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+\usepackage{pgfplotstable}
+
+\makeatletter
+\newcommand{\bfgreek}[1]{\bm{\@nameuse{#1}}}
+\makeatother
+
+
+\input{../../ml2016macros}
+
+
+
+\DeclareGraphicsRule{*}{mps}{*}{}
+
+%\include{mathmacro}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+
+%\setbeamercovered{transparent=40}
+\setbeamercovered{invisible}
+
+\usetheme{Malmoe}
+%\useoutertheme[footline=institutetitle,subsection=false]{miniframes}
+\useoutertheme{infolines}
+\usefonttheme[onlymath]{serif}
+%\setbeamertemplate{footline}{TTIC 31020}
+\setbeamertemplate{itemize item}[ball]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{enumerate item}[square]
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamertemplate{navigation symbols}[only frame symbol]
+\setbeamertemplate{subsection in toc shaded}[default][60]
+\setbeamertemplate{frametitle}
+{
+\begin{centering}
+\color{black}
+\textbf{\insertframetitle}
+\par
+\end{centering}
+}
+\setbeamercolor{normal text}{fg=blue!50!black}
+\setbeamercolor{math text}{fg=black}
+\setbeamercolor{normal text in math text}{use={normal text},fg=normal text.fg}
+
+\setbeamercolor{bibliography item}{fg=Green}
+
+\usetikzlibrary{backgrounds,arrows}
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+\usetikzlibrary{snakes}
+\usetikzlibrary{shapes}
+\usetikzlibrary{shapes.misc}
+\usetikzlibrary{topaths}
+\usetikzlibrary{calc,3d,intersections}
+
+
+\tikzset{cross/.style={cross out, draw=red!50!black,very thick, minimum size=4pt, inner sep=0pt, outer sep=0pt},
+%default radius will be 1pt. 
+cross/.default={1pt}}
+
+\newcommand{\mycite}[1]{\textcolor{Green}{[{#1}]}}
+
+% TODO: make this directly reference normal text color
+\newcommand{\myar}{\textcolor{blue!50!black}{$\Rightarrow$}}
+
+
+
+\subtitle{TTIC 31020: Introduction to Machine Learning}
+\title{Lecture 1: General introduction}
+\author[Greg Shakhnarovich]{Instructor:~Greg~Shakhnarovich}
+\institute[TTIC]{TTI-Chicago}
+\date{September 27, 2016}
+
+
+\end{document}
